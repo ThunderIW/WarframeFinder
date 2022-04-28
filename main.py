@@ -28,27 +28,39 @@ relic_list = response.json()
 
 
 def getFarmlocation(relic: str):
+    print("Item: "+relic)
+    print("-----------------------------")
     for planet in planetsList:
         try:
             chosen_planet = planets.get(planet)
 
             ##print(chosen_planet)
+
             for planetNodes in chosen_planet:
                 gamemode =missonRewards["missionRewards"][planet][planetNodes]['gameMode']
                 rewards = missonRewards["missionRewards"][planet][planetNodes]["rewards"]
-                print(planetNodes,gamemode,rewards["A"])
+                if isinstance(rewards, list):
+                    for i in range(0,len(rewards)):
 
-
-
-
-
-
+                        if rewards[i]["itemName"]==relic:
+                            rarity=rewards[i]["rarity"]
+                            chance=rewards[i]["chance"]
+                            print(f"planet: {planet} {planetNodes}\nGame mode: {gamemode}\nRarity:{rarity}\nChance:{chance}%")
+                if isinstance(rewards,dict):
+                    for key,values in rewards.items():
+                        for v in range(0,len(values)):
+                            if values[v]["itemName"]==relic:
+                                chance=values[v]["chance"]
+                                rarity=values[v]["rarity"]
+                                print(f"Planet: {planet} {planetNodes}\nGameMode: {gamemode}\nRotation: {key}\nRarity: {rarity}\nChance:{chance}%")
+            print("-----------------------------")
 
 
         except TypeError:
             pass
         except AttributeError:
             pass
+
 
 
 
@@ -68,4 +80,4 @@ def findPrimePartLocation(part: str):
 
 
 
-getFarmlocation("Magazine Warp")
+getFarmlocation("Vapor Specter Blueprint")
