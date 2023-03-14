@@ -79,5 +79,3 @@ def findPrimePartLocation(part: str):
                 print("----------------------------------------------------------")
 
 
-
-getFarmlocation("Vapor Specter Blueprint")
