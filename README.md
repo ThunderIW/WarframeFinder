@@ -9,5 +9,5 @@
 <p>Here is a screenshot of the program:</p>
 
 <!-- Image for WarframeFinder Project -->
-<img src="" width="500px" alt="WarframeFinder Program Screenshot">
+<img src="Project_1.png" width="500px" alt="WarframeFinder Program Screenshot">
 
