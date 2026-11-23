@@ -64,6 +64,10 @@ Chance:13%
 - Results are printed to the console. The interface in the screenshot isn't part of this repository yet.
 - Part names must match the drop tables exactly, e.g. `Acceltra Prime Receiver`.
 
+## Background
+
+Built in 2022 while I was learning Python; my first project on a live API. The unfinished desktop version (shown in the screenshot) had search-as-you-type and a pop-up table of drop chances. I stopped when estimating a player's chance over repeated runs turned out to be beyond what I could build at the time.
+
 ## Credits
 
 Drop data: [WFCD/warframe-drop-data](https://github.com/WFCD/warframe-drop-data) · Item list: [warframe.market](https://warframe.market)
