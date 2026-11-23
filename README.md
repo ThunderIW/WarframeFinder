@@ -3,7 +3,8 @@
 </p>
 
 <p align="center">
-  <img src="./Project_1.png" width="640" alt="WarframeFinder interface: Acceltra Prime Receiver selected, with a table of relics (Axi O6, Neo F3, Neo O2) listing rarity and drop chance per refinement">
+  <img src="./Project_1.png" width="640" alt="WarframeFinder interface: Acceltra Prime Receiver selected, with a table of relics (Axi O6, Neo F3, Neo O2) listing rarity and drop chance per refinement"><br>
+  <sub>Desktop prototype (not included in this repo)</sub>
 </p>
 
 ## What it is
@@ -33,7 +34,7 @@ git clone https://github.com/ThunderIW/WarframeFinder.git
 cd WarframeFinder
 pip install requests
 
-python warframeItem.py   # creates WarframeItem.json
+echo [] > WarframeItem.json   # empty item list; the relic lookup doesn't need it
 python -c "from main import findPrimePartLocation; findPrimePartLocation('Acceltra Prime Receiver')"
 ```
 
@@ -54,14 +55,11 @@ Chance:13%
 ...
 ```
 
-> [!NOTE]
-> The warframe.market v1 endpoint used by `warframeItem.py` currently returns HTTP 403. The relic lookup doesn't need the item list, so you can create an empty one and carry on:
-> `echo [] > WarframeItem.json`
-
 ## Limitations
 
 - `getFarmlocation` only checks mission nodes on Mercury and Venus so far.
-- Results are printed to the console. The interface in the screenshot isn't part of this repository yet.
+- Results are printed to the console.
+- `warframeItem.py` uses the warframe.market v1 endpoint, which currently returns HTTP 403.
 - Part names must match the drop tables exactly, e.g. `Acceltra Prime Receiver`.
 
 ## Background
